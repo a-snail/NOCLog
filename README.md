@@ -10,7 +10,7 @@ NOCLog is a very simple library that provides a debug logs in an Objective-C pro
 
 ## Installation
 
-### [CocoaPods][cocoapods]
+### [CocoaPods](https://cocoapods.org)
 
 ```
 pod 'NOCLog', '~> 0.1'
