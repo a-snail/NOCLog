@@ -67,7 +67,7 @@ You can set the log level by specifying the `LOGLEVEL` value at the **Preprocess
 LOGLEVEL=31
 ```
 
-![Set the log level using preprocessor macro](Assets/PreprocessorMacro.png)
+![Set the log level using preprocessor macro](https://raw.githubusercontent.com/a-snail/NOCLog/assets/Assets/PreprocessorMacro.png)
 
 Using **Preprocessor Macros** is recommended because you can specify a separate log level for the Debug and Release environments.
 
@@ -113,7 +113,7 @@ You can also refer to the demo app.
 
 If you add the log output code as above and run the app, it will be output to the console as below.
 
-![Sample log output](Assets/Sample.png)
+![Sample log output](https://raw.githubusercontent.com/a-snail/NOCLog/assets/Assets/Sample.png)
 
 The above sample is when the log level(`LOGLEVEL`) is set to a value of 31 or more.
 
