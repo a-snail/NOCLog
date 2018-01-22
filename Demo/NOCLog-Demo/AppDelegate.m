@@ -15,6 +15,12 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NOCLogD(@"%@%@\n%@%@",
             @"application  : ", application,
             @"launchOptions: ", launchOptions);
+
+    NOCLogE(@"%@", @"Error Message!");
+    NOCLogW(@"%@", @"Warning Message!");
+    NOCLogI(@"%@", @"Information Message!");
+    NOCLogV(@"%@", @"Verbose Message!");
+
     return YES;
 }
 
@@ -32,11 +38,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     NOCLogD(@"application: %@", application);
-
-    NOCLogE(@"%@", @"Error Message!");
-    NOCLogW(@"%@", @"Warning Message!");
-    NOCLogI(@"%@", @"Information Message!");
-    NOCLogV(@"%@", @"Verbose Message!");
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
