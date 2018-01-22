@@ -1,6 +1,0 @@
-framework module NOCLogFramework {
-  umbrella header "NOCLogFramework.h"
-
-  export *
-  module * { export * }
-}
