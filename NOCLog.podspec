@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'NOCLog'
-  spec.version = '0.1.5'
+  spec.version = '0.1.6'
   spec.summary = 'NOCLog is a very simple library that provides a debug logs in an Objective-C projects.'
 
   spec.homepage = 'https://github.com/a-snail/NOCLog'

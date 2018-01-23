@@ -2,6 +2,10 @@
 
 Any changes to the `NOCLog` project will be written to this file.
 
+## **0.1.6**
+#### Add
+* Add .cocoadocs.yml
+
 ## **0.1.5**
 #### Modify
 * Modify README.md
