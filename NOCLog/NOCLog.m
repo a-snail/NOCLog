@@ -1,6 +1,37 @@
 #import "NOCLog.h"
 
 
+extern void NOCExceptionHandler(NSException *exception) {
+    NSString *frm = nil;
+    NSString *msg = @"[NOCLog] - Uncaught Exception ";
+    NSUInteger to = (NSUInteger)80;
+    NSUInteger ln = to - msg.length;
+    NSString *del = [@"" stringByPaddingToLength:ln
+                                      withString:@"-"
+                                 startingAtIndex:(NSUInteger)0];
+
+    msg = [msg stringByAppendingString:del];
+    del = [@"" stringByPaddingToLength:to
+                            withString:@"-"
+                       startingAtIndex:(NSUInteger)0];
+
+    NSArray *address = [exception callStackReturnAddresses];
+    NSArray *symbols = [exception callStackSymbols];
+
+    frm = @"\n\n%@\n%@%@\n%@%@\n%@\n%@%@\n%@\n%@\n%@\n%@\n%@\n%@\n";
+    msg = [NSString stringWithFormat:frm, msg,
+           @"Name   : ", exception.name,
+           @"Reason : ", exception.reason,
+           del,
+           @"Exception : ", exception,
+           del,
+           @"StackAddress : ", address,
+           @"StackSymbols : ", symbols,
+           del];
+    NSLog(@"%s", [msg UTF8String]);
+}
+
+
 @interface NOCLog ()
 
 #pragma mark - Private properties
@@ -19,6 +50,8 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[self alloc] init];
+
+        NSSetUncaughtExceptionHandler(&NOCExceptionHandler);
     });
     return sharedInstance;
 }
@@ -98,7 +131,7 @@
     NSString *res = [NSString alloc];
 
     if (type != NOCLogTypeInfo) {
-        res = @"[NSLog] -";
+        res = @"[NOCLog] -";
         switch (type) {
             case NOCLogTypeError:
                 res = [res stringByAppendingString:@" Error "];
